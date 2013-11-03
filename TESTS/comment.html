@@ -1,0 +1,261 @@
+<html>
+<head>
+	<title></title>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="comment.js"></script>
+
+<style type="text/css">
+@background: #FFF;
+@text: #333;
+@header: #F5F5F5;
+@content: #EEE;
+@content_border_top: #CCC;
+@content_border_bottom: #BBB;
+@close: #FF4444;
+@minimize: #F2EF27;
+@expand: #C3EB34;
+@article_border_top-left: #BBB;
+@article_border_bottom-right: #FFF;
+@footer: #FFF;
+
+body {
+  padding: 0;
+  margin: 0;
+  background: @background url('http://goo.gl/fIYWK');
+  overflow: hidden;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 1em;
+  color: @text;
+  line-height: normal;
+  text-align: justify;
+}
+#container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  margin: auto;
+}
+header, footer {
+  box-shadow:         0 0 10px 0 rgba(0, 0, 0, .3);
+  -o-box-shadow:      0 0 10px 0 rgba(0, 0, 0, .3);
+  -ms-box-shadow:     0 0 10px 0 rgba(0, 0, 0, .3);
+  -moz-box-shadow:    0 0 10px 0 rgba(0, 0, 0, .3);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3em;
+  padding: 0;
+  margin: 0;
+  background-color: @header;
+  display: block;
+}
+header h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 3em;
+  padding: 0 1em;
+  margin: auto;
+  display: block;
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 3em;
+}
+#open_button {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 15em;
+  height: 2em;
+  margin: auto;
+  background: @background;
+  display: none;
+  font-weight: 900;
+  text-align: center;
+  line-height: 2em;
+  text-transform: uppercase;
+}
+#content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 30em;
+  height: 0;
+  padding: 0;
+  margin: auto;
+  border-radius: 15px;
+  border-top: 2.5em solid @content_border_top;
+  border-bottom: 1em solid @content_border_bottom;
+  background: @content;
+  display: block;
+  transition:         height 1s ease-in-out .5s;
+  -o-transition:      height 1s ease-in-out .5s;
+  -ms-transition:     height 1s ease-in-out .5s;
+  -moz-transition:    height 1s ease-in-out .5s;
+  -webkit-transition: height 1s ease-in-out .5s;
+  box-shadow:         0 10px 10px -10px rgba(0, 0, 0, .5);
+  -o-box-shadow:      0 10px 10px -10px rgba(0, 0, 0, .5);
+  -ms-box-shadow:     0 10px 10px -10px rgba(0, 0, 0, .5);
+  -moz-box-shadow:    0 10px 10px -10px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .5);
+}
+#content:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: @article_border_top-left;
+  display: block;
+}
+#content:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: @article_border_top-left;
+  display: block;
+}
+#content .close,
+#content .minimize,
+#content .expand {
+  cursor: pointer;
+  position: absolute;
+  top: -2.4em;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  box-shadow:         inset 0 0 3px rgba(0, 0, 0, .5);
+  -o-box-shadow:      inset 0 0 3px rgba(0, 0, 0, .5);
+  -ms-box-shadow:     inset 0 0 3px rgba(0, 0, 0, .5);
+  -moz-box-shadow:    inset 0 0 3px rgba(0, 0, 0, .5);
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, .5);
+  color: @background;
+  font-size: .8em;
+  text-align: center;
+  line-height: 20px;
+}
+#content .close {
+  left: .9em;
+  background: @close;
+}
+#content .minimize {
+  left: 2.9em;
+  background: @minimize;
+  transform:         rotate(90deg);
+  -o-transform:      rotate(90deg);
+  -ms-transform:     rotate(90deg);
+  -moz-transform:    rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+#content .expand {
+  left: 5em;
+  background: @expand;
+  transform:         rotate(45deg);
+  -o-transform:      rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+#content article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3em;
+  margin: 1em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: @article_border_top-left
+                @article_border_bottom-right
+                @article_border_bottom-right
+                @article_border_top-left;
+  background: @background;
+  display: none;
+  overflow: hidden;
+  box-shadow:         inset 0 0 10px rgba(0, 0, 0, .3);
+  -o-box-shadow:      inset 0 0 10px rgba(0, 0, 0, .3);
+  -ms-box-shadow:     inset 0 0 10px rgba(0, 0, 0, .3);
+  -moz-box-shadow:    inset 0 0 10px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .3);
+}
+#content article .photo {
+  position: relative;
+  float: left;
+  width: 95px;
+  height: 95px;
+  padding: 0;
+  margin: 0 5px 0 0;
+  border-radius: 100%;
+  background: @content;
+  display: block;
+}
+#content article p {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3em;
+  padding: 0 1em;
+  margin: 0;
+  background-color: @footer;
+  display: block;
+  line-height: 3em;
+}
+footer p {
+  padding: 0;
+  margin: 0;
+  display: block;
+  font-size: .8em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+</style>
+</head>
+
+<body>
+<section id="container">
+  <header>
+    <h1>Mac Window</h1>
+  </header>
+  <section id="open_button">Click To Open Back Up</section>
+  <section id="content">
+    <section class="close">✖</section>
+    <section class="minimize">Ⅰ</section>
+    <section class="expand">✖</section>
+    <article>
+      <section class="photo"></section>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+    </article>
+  </section>
+  <footer>
+    <p>&copy; WhiteWolfWizard 2013</p>
+  </footer>
+</section>
+</body>
+</html>

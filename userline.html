@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CONTXT-demo</title>
+    <!--comment CSS-->
+    <link href="css/comment_je.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+  <!-- javascript -->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="js/bootstrap.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('div.comment.container').mouseenter(function(){
+       $('span.comment.menu.button',this).css('opacity','1');
+      });
+      $('div.comment.container').mouseleave(function(){
+       $('span.comment.menu.button',this).css('opacity','0');
+      });
+    });
+    </script>
+    <!-- Custom CSS for the 'Full Width Pics' Template -->
+    <!-- local navigation style-->
+    <style>
+    * {margin : 0; padding: 0;}
+    
+    body{
+      margin-top: 57px;
+      min-width: 760px;
+    }
+
+      h3 {
+        margin-top: 20px;
+        border-bottom: 1px dashed gray;
+      }
+    a:active { text-decoration: none;}
+    a:hover { text-decoration: none;}
+        li { list-style: none; }
+        body{
+          min-width: 760px;
+        }
+      #wrap{
+        overflow: hidden;
+        background: url('src/page_bg.jpg');
+       
+      }
+      #wrap > #main-lnb {
+        float: left;
+        width: 220px;
+      }
+      #main-lnb > div > a {
+        display: block;
+        height : 96px; line-height: 96px;
+      }
+
+      #main-lnb > div > a > ul  {
+        padding : 20px 20px;
+        display: block;
+        height : 20px; line-height: 20px;
+        text-align: center;
+        vertical-align: center;
+        color : white;
+        font-weight: thin;
+      }
+      #main-lnb > div.menu:hover{
+        background: black;
+        opacity: 0.6; 
+      }
+      #wrap > #content_wrap {
+        float: left;
+        width: 100%;
+        margin-right : -220px;
+      }
+      #wrap > #content_wrap > #content{
+        padding-right: 220px;
+      }
+      </style>
+<!--contents-->
+      <style>
+      #content{
+        background: url('src/page_bg_white.png');
+        border-left: 1px solid gray;
+      }
+
+      .guest {
+        margin: 70px 50px;
+        text-align: center;
+        color: white;
+      }
+      </style>
+<!--comment sprite-->
+<style>
+      span.comment.profile {
+        margin : 10px 23px;
+        width : 42px;
+        height : 42px;
+        background: url('src/profile-small.png');
+        box-shadow: 1px;
+        }
+        .comment.profile.name{
+          margin: 10px 0px;
+        }
+      span.comment.menu.button{
+        background: url('src/button.png');
+        width : 57px;
+        height: 57px;
+        margin : 20px 11px;
+        opacity: 0;
+    }
+
+    div.comment.contents{
+      width: 600px;
+    }
+    </style>
+  
+  </head>
+
+  <body>
+<!--gnb start-->
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="headline.html"><img src="src/logo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html"> ABOUT </a></li>
+            <li><a href="headline.html">HEADLINE</a></li>
+            <li class="active"><a href="userline.html">USERLINE</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MY PROFILE<b class="caret"></b></a>
+              <ul class="nav dropdown-menu">
+                <li><a href="myuserline.html">MY USERLINE</a></li>
+                <li><a href="mycontxt.html">MY CONTXT</a></li>
+                <li class="divider"></li>
+                <li><a href="#">SIGN OUT</a></li>
+              </ul>
+            </li> 
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control input-sm" placeholder="Search">
+              </div>
+            </form>
+          </ul>
+
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+<!--SUBNAV USERLINE-->
+
+<!--vertical nav -->
+
+    <div id="wrap">
+      <nav id="main-lnb">
+            <div class="guest">
+              <img src="src/guest.png">
+              <h2>guest</h2>
+            </div>
+            <div class="menu"><a href="myuserline.html">
+             <ul>
+                <li>15 following</li>
+                <li>1 follower</li>
+            </ul>
+            </a>
+          </div>
+            <div class="menu"><a href="mycontxt.html">
+              <ul>
+              <li>4 contxts</li>
+               <li>50 scraps</li>
+               <li>125 articles read</li>
+            </ul>
+            </a>
+          </div>
+      </nav>
+      <div id="content_wrap">
+        <ul>
+         <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -0px; width: 55px; height: 54px"></span></div>
+              <div class="comment profile name"><p>연합뉴스</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -64px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>monmin</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: 1px -128px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>Jim Roberts</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -193px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>nshikk</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: 1px -259px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>ecri11</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -322px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>AP news</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -388px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>USATODAY</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -452px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>Pitchfork</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -516px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>The NewYorker</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -581px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>001xm</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -646px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>pheereee</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -710px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>ㅇㅇㄹㄹㅇ</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -775px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>rumbanumba</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -839px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>sandcatbear</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+         <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -904px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>mayj5</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+        <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -969px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>monet</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents title"><h3 class="comment contents title">제목</h3></div>
+              <div class="comment contents tag"><p class="comment contents tag">#태그 #태그 #태그 #태그 #태그 #태그 #태그 #태그 </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -200px; width: 40px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -267px; width: 59px; height: 57px"></span></a>
+              <a href="#"><span class="comment menu button" style="background-position: -0px -334px; width: 53px; height: 57px"></span></a>
+            </div>
+          </div>
+          </li>
+
+        </ul>
+
+  </body>
+
+</html>

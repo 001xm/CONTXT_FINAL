@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CONTXT-demo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS for the 'Full Width Pics' Template -->
+    <link href="css/full-width-pics.css" rel="stylesheet">
+    <!--bottom-nb-->
+    <style>
+    .headline {
+        color: white;
+        font-weight: thin;
+    }
+    header.headline {
+        height: 163px;
+        padding-top: 40px;
+        text-align: center;
+        vertical-align: middle;
+        background: #F4C047;
+    }
+     #nav_bottom {
+            padding-left : 326px;
+            overflow: hidden;
+            background: #2D2D2D;
+            height : 48px;
+        }
+        #nav_bottom > ul{
+            padding : 0px 200px;
+            vertical-align: middle;
+            overflow: hidden;
+            float: left;
+        }
+        #nav_bottom > ul > li { 
+            /* 레이아웃 설정 */
+            display: block;
+            height: 48px; 
+            /* 색상 설정 */
+            border-left: 1px solid #333333;
+            border-right: 1px solid #474747;
+
+            float: left; 
+        }
+        /* a 태그 설정 */
+        #nav_bottom a {
+            /* 레이아웃 설정 */
+            width : 99px;
+            display: block;
+            text-align: center;
+            padding: 15px 5px;
+            color: white;
+            font-size : 0.9em;
+            font-weight: thin;
+        }
+        #nav_bottom a:hover { text-decoration: none;}
+        .cat0 { border-bottom: 3px solid black;}
+        .cat1 { border-bottom: 3px solid #304070;}
+        .cat2 { border-bottom: 3px solid #56A0BE;}
+        .cat3 { border-bottom: 3px solid #97D97F;}
+        .cat4 { border-bottom: 3px solid #F4C047;}
+        .cat5 { border-bottom: 3px solid #D95B43;}
+        .cat6 { border-bottom: 3px solid #C02942;}
+
+        .cat0:hover {background: black;}
+        .cat1:hover {background: #304070;}
+        .cat2:hover {background: #56A0BE;}
+        .cat3:hover {background: #97D97F;}
+        .cat4:hover {background: #F4C047;}
+        .cat5:hover {background: #D95B43;}
+        .cat6:hover {background: #C02942;}
+
+        .cat0.active {background: black;}
+        .cat1.active {background: #304070;}
+        .cat2.active {background: #56A0BE;}
+        .cat3.active {background: #97D97F;}
+        .cat4.active {background: #F4C047;}
+        .cat5.active {background: #D95B43;}
+        .cat6.active {background: #C02942;}
+        </style>
+  </head>
+
+  <body>
+<!--gnb start-->
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="headline.html"><img src="src/logo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html"> ABOUT </a></li>
+            <li class="active"><a href="headline.html">HEADLINE</a></li>
+            <li><a href="userline.html">USERLINE</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MY PROFILE<b class="caret"></b></a>
+              <ul class="nav dropdown-menu">
+                <li><a href="myuserline.html">MY USERLINE</a></li>
+                <li><a href="mycontxt.html">MY CONTXT</a></li>
+                <li class="divider"></li>
+                <li><a href="#">SIGN OUT</a></li>
+              </ul>
+            </li> 
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control input-sm" placeholder="Search">
+              </div>
+            </form>
+          </ul>
+
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+<!--bottom nb -->
+ <nav id="nav_bottom">
+        <ul>
+            <li class="cat0"><a href="headline.html">홈</a></li>
+            <li class="cat1"><a href="politics.html">정치</a></li>
+            <li class="cat2"><a href="economy.html">경제</a></li>
+            <li class="cat3"><a href="society.html">사회</a></li>
+            <li class="cat4 active"><a href="world.html">세계</a></li>
+            <li class="cat5"><a href="science.html">과학/기술</a></li>
+            <li class="cat6"><a href="culture.html">생활/문화</a></li>
+
+        </ul>
+    </nav>
+    <header class="headline">
+        <h4 class="headline">HEADLINE CONTXT</h4>
+        <h2 class="headline">SHUTDOWN</h2>
+    </header>
+    <div class="row contents">
+     <div class="col-md-12">.col-md-1</div>
+     </div>
+  <!-- javascript -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  </body>
+
+</html>

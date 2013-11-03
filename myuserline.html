@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CONTXT-demo</title>
+    <!--comment CSS-->
+    <link href="css/comment.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+  <!-- javascript -->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="js/bootstrap.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('div.comment.container').hover(function(){
+       $('span.comment.menu.button',this).css('opacity','1');
+      });
+      $('div.comment.container').mouseleave(function(){
+       $('span.comment.menu.button',this).css('opacity','0');
+      });
+    });
+    </script>
+    <!-- Custom CSS for the 'Full Width Pics' Template -->
+    <!-- local navigation style-->
+    <style>
+    * {margin : 0; padding: 0;}
+    a:hover {text-decoration: none;}
+    body{
+      font-family: 'walkway' font-weight:thin;}
+      margin-top: 57px;
+      min-width: 760px;
+    }
+    ul.myuserline{
+      left : -200px;
+    }
+    #sub-lnb > a.click { text-decoration: underline;}
+
+        li { list-style: none; }
+        body{
+          min-width: 760px;
+        }
+      #wrap{
+        margin-top: 37px;
+        overflow: hidden;
+        background: url('src/page_bg.jpg');
+       
+      }
+      #wrap > #main-lnb {
+        float: left;
+        width: 220px;
+      }
+      #main-lnb > div > a {
+        display: block;
+        height : 96px; 
+        line-height: 96px;
+      }
+
+      #main-lnb > div > a > ul  {
+        padding : 20px 20px;
+        display: block;
+        height : 20px; line-height: 20px;
+        text-align: center;
+        vertical-align: center;
+        color : white;
+        font-weight: thin;
+      }
+      #main-lnb > div.menu.myuserline{
+        background: black;
+        opacity: 0.6; 
+      }
+      #wrap > #content_wrap {
+        float: left;
+        width: 100%;
+        margin-right : -420px;
+      }
+      #wrap > #content_wrap > #content{
+        padding-right: 420px;
+      }
+      #sub-lnb{
+        float: left;
+        width: 200px;
+        background: black;
+        padding: 273px 0px;
+        text-align: center;
+        height: 1600px;
+      }
+      #sub-lnb > ul > li > a{
+        display: block;
+        height: 20px;
+        line-height: 20px;
+        padding-left: 15px;
+        padding-top: 30px;
+        text-decoration: none;
+        color: white;
+        font-weight: thin;
+      }
+       #sub-lnb > ul > li > a:hover{
+        text-decoration: underline;
+      }
+      #sub-lnb > ul > li > a.click{
+        text-decoration: underline;
+      }
+      .comment.contents.tag.margin{
+      margin-top: 25px; 
+      }
+      
+      </style>o
+<!--contents-->
+      <style>
+      div.titlebar{
+      background: url('src/titlebar.png');
+      height : 79px;
+      line-height: 79px;
+      }
+      div.titlebar > h3.header {
+        padding: 29px 30px;
+        vertical-align: middle;
+      }
+      #content{
+        border-left: 1px solid black;
+      }
+      .guest {
+        margin-top: 37px;
+        margin: 70px 50px;
+        text-align: center;
+        color: white;
+      }
+      #content_wrap{
+        background: white;
+      }
+      </style>
+<!--comment sprite-->
+<style>
+      span.comment.profile {
+        margin : 10px 23px;
+        width : 42px;
+        height : 42px;
+        background: url('src/profile-small.png');
+        }
+        .comment.profile.name{
+          margin: 10px 0px;
+        }
+      span.comment.menu.button{
+        background: url('src/unfollow.png');
+        width : 63px;
+        height: 55px;
+        margin : 20px 11px;
+        opacity: 0;
+    }
+    </style>
+  
+  </head>
+
+  <body>
+<!--gnb start-->
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="headline.html"><img src="src/logo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html"> ABOUT </a></li>
+            <li><a href="headline.html">HEADLINE</a></li>
+            <li class="active"><a href="userline.html">USERLINE</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MY PROFILE<b class="caret"></b></a>
+              <ul class="nav dropdown-menu">
+                <li><a href="myuserline.html">MY USERLINE</a></li>
+                <li><a href="mycontxt.html">MY CONTXT</a></li>
+                <li class="divider"></li>
+                <li><a href="#">SIGN OUT</a></li>
+              </ul>
+            </li> 
+            <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control input-sm" placeholder="Search">
+              </div>
+            </form>
+          </ul>
+
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+<!--vertical nav -->
+
+    <div id="wrap">
+      <nav id="main-lnb">
+            <div class="guest">
+              <img src="src/guest.png">
+              <h2>guest</h2>
+            </div>
+            <div class="menu myuserline"><a href="myuserline.html">
+             <ul>
+                <li>15 following</li>
+                <li>1 follower</li>
+            </ul>
+            </a>
+          </div>
+            <div class="menu"><a href="mycontxt.html">
+              <ul>
+              <li>4 contxts</li>
+               <li>50 scraps</li>
+               <li>125 articles read</li>
+            </ul>
+            </a>
+          </div>
+      </nav>
+      <nav id="sub-lnb">
+              <ul>
+                <li><a class="click" href="myuserline.html">following</a></li>
+                <li><a href="myuserline-followers.html">followers</a></li>
+            </ul>
+      </nav>
+  <!-- subnav and contents-->
+      <div id="content_wrap">
+
+<div class="titlebar"><h3 class="header">15 following</h3></div>
+<div>
+<ul class="myuserline">
+         <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -0px; width: 55px; height: 54px"></span></div>
+              <div class="comment profile name"><p>연합뉴스</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">대한민국 뉴스의 출발, 연합뉴스의 CONTXT 계정입니다.</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -64px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>monmin</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">According to Google, I don't exist.</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: 1px -128px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>Jim Roberts</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">Just found the next cool thing: <br>Executive editor & chief content officer of @Mashable.<br>iPhone: 40.751663,-73.989670</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -193px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>nshikk</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">Architecture + Cartoon. Seoul, Korea</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: 1px -259px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>ecri11</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">콘크리트 유토피아, 아파트 게임. seoul · blog.naver.com/ecri11</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -322px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>AP news</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">News, discussion and a behind-the-scenes look at the process<br>
+               from The Associated Press. Managed 24/7 by a team of editors based in NY:<br>
+                http://apne.ws/APStaff Global · ap.org</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -388px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>USATODAY</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">The latest news headlines and interesting stories from <br>
+                http://USATODAY.com 's top news, plus tweets from our social media team.<br>
+USA TODAY HQ, McLean, Va. · usatoday.com</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -452px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>Pitchfork</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">The essential guide to independent music and beyond.<br>
+Chicago/Brooklyn · pitchfork.com</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -516px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>The NewYorker</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">The New Yorker is a weekly magazine with a mix of 
+                reporting of <br> politics and culture, humor and cartoons, fiction and poetry,<br> and reviews and criticism.
+New York, NY · newyorker.com</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -581px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>001xm</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">in the cabinet</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -646px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>pheereee</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">읽기전용 파일입니다. 휴지통에 버리시겠습니까?<br>
+                pheeree.tumblr.com</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -710px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>ㅇㅇㄹㄹㅇ</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin"></p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -775px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>rumbanumba</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">불쾌하지 않을 정도의 평범함의 경계선에 걸린 은근하고 수줍은 듯한 기이함.</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+                   <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -839px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>sandcatbear</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">sandcatbear.blogspot.kr</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+         <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -904px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>mayj5</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">석관동 · mayj5.tumblr.com</p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+              </div>
+          </div>
+          </li>
+        <li class="comment">
+          <div class="comment container">
+            <div class="comment profile">
+              <div class="comment profile img"><span class="comment profile" style="background-position: -0px -969px; width: 55px; height: 55px"></span></div>
+              <div class="comment profile name"><p>monet</p></div>
+            </div>
+            <div class="comment contents">
+              <div class="comment contents tag"><p class="comment contents tag margin">Monet </p></div>
+            </div>
+            <div class="comment menu">
+              <a href="#"><span class="comment menu button" style="background-position: -0px -0px; width:63px; height: 55px;"></span></a>          </div>
+          </div>
+          </li>
+
+        </ul>
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+  </body>
+
+</html>
