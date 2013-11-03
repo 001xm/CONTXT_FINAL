@@ -1,0 +1,45 @@
+    li.comment{
+        overflow: hidden;
+        height : 98px;
+        color: #3D3B3B;
+        background: white;
+        border-bottom: 1px solid gray;
+      }  
+    li.comment:hover{
+      background: #E9E9E9;
+    }    
+      div.comment.container{
+        margin-left: 200px
+      }
+      .comment.profile{
+        float: left;
+        width:98px; 
+        text-align: center;
+      }
+      .comment.contents{
+        margin-left: 20px;
+        float:left;
+        width:500px;
+      }
+      .comment.menu{
+        float:left;
+        width : 280px;
+        text-align: center;
+      }
+      .comment.profile.img{
+        height:55px;
+      }
+      .comment.profile.name{
+        height:15px;
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+      h3.title{
+        height:30px;
+        margin-left : 5px;
+        font-weight: bold;}
+      div.tag{
+        height:20px;
+        font-size: 0.9em
+      }
+      
